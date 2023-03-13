@@ -43,20 +43,15 @@ public class Laptop {
         System.out.println("done" + ". Its already: " + this.batteryChargeInPercent + "%");
     }
 
-    public static void print(Laptop[] array) {
-        for (Laptop laptops : array) {
-            System.out.println(laptops);
+    public static void main(String... args) {
+        Laptop[] laptops = {new Laptop(),
+                new Laptop("Victus", 17.3f, 16, 128, 2, 1),
+                Laptop.getInstance(),
+                Laptop.getInstance()
+        };
+
+        for (Laptop laptop : laptops) {
+            System.out.println(laptop);
         }
-    }
-
-    public static void main(String... Args) {
-        Laptop[] laptops = new Laptop[4];
-
-        laptops[0] = new Laptop();
-        laptops[1] = new Laptop("Victus", 17.3f, 16, 128, 2, 1);
-        laptops[2] = Laptop.getInstance();
-        laptops[3] = Laptop.getInstance();
-
-        print(laptops);
     }
 }
